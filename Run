@@ -1,0 +1,19 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package com.zz.web310;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Run {
+    public Run() {
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Run.class, args);
+    }
+}

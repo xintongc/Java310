@@ -1,0 +1,26 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
+package com.zz.web310.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping({"/calculate"})
+public class CalculateController {
+    public CalculateController() {
+    }
+
+    @RequestMapping({"/add"})
+    public Integer add(Integer v1, Integer v2) {
+        if(v1 != null && v2 != null) {
+            System.out.println("=======");
+            return Integer.valueOf(v1.intValue() + v2.intValue());
+        } else {
+            return Integer.valueOf(0);
+        }
+    }
+}

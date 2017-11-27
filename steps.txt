@@ -1,0 +1,135 @@
+1.  新建项目
+
+2.  设置 pom.xml
+
+3.  新建包
+    com
+    +   zz
+        +   mall
+            +   controller
+            +   entity
+            +   model
+            +   repo
+            +   service
+
+3.  User
+    ...entity 
+    建 类
+    添加 属性声明
+
+4.  IUserService
+    ...service.user.IUserService
+    建 接口
+
+5.  UserServiceImpl
+    ...service.user.impl.UserServiceImpl
+    建 类 实现上述接口
+
+6.  IUserSevice
+    增加 方法声明
+
+7.  UserServiceImpl 
+    生成 方法空壳实现
+
+8.  ILoginBizService 
+    ...service.login.ILoginBizService
+    建 接口
+
+9.  LoginBizServiceImpl
+    ...service.login.impl.LoginBizServiceImpl
+    建 类 实现上述接口
+
+10. ILoginBizService
+    增加方法声明
+
+11. LoginBizResult
+    ...model.LoginBizResult
+    建 类
+    添加 属性声明
+
+12. ILoginBizService
+    修改 方法返回值类型 从 User 改为 LoginBizResult
+
+13. LoginBizServiceImpl
+    增加 
+    @Autowired
+    private IUserSevice userSevice;
+
+    实现方法
+
+14. LoginController
+    建 类
+    ...controller.LoginController
+
+15. UserController
+    建 类
+    ...controller.UserController
+
+16. LoginController
+    增加 方法声明
+    isNameAvailable(String name) 
+
+    增加 service 链接
+    @Autowired
+    private ILoginBizService loginBizService
+
+    实现 方法
+
+17. ILoginBizService + LoginBizServiceImpl
+    增加 方法声明和实现
+    LoginBizResult exist(String name)
+
+
+18. LoginController
+    LoginBizResult register(User user) 
+    增加 @RequestMapping
+
+19. User
+    name 
+    增加 @NotNull
+
+20  LoginController
+    LoginBizResult register(User user) 
+    参数增加 @Valid， 和 BindingResult bindingResult 
+
+21. ILoginBizService + LoginBizServiceImpl
+    增加 方法声明和实现
+    LoginBizResult register(User user) 
+
+22. User 
+    增加 方法
+    prePersist()
+    preUpdate()
+
+23. LoginController
+    填写 方法
+    signIn()
+
+24. 新增包
+    ...mall.config
+
+25. WebMvcConfiguration
+    ...mall.config.WebMvcConfiguration
+    新增类
+
+26. 新建包
+    interceptor
+    ...config.interceptor
+
+27  InternalInterceptor
+    ...config.interceptor.InternalInterceptor
+    新增 类
+    覆盖 方法
+    preHandle
+
+28. WebMvcConfiguration
+    增加
+    @Autowired
+    private InternalInterceptor internalInterceptor
+
+    覆盖
+    addInterceptors(InterceptorRegistry registry)
+
+
+
+

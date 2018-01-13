@@ -34,11 +34,11 @@
             哪些driver
                 JDBC
         ORM
-            shenme ?
+            什么 ?
                 对象关系映射 
             干什么？
                 把查询变成 SQL
-                吧数据库的结果 变成对象
+                把数据库的结果 变成对象
             什么样？
                 public Student getStudentById(Integer id)
                     -> select * from student where id = 'id'(SQL)
